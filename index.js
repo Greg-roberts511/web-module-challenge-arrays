@@ -42,7 +42,7 @@ To save you from having to count the items above, you can assume that length of 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
-is31Flavors(originalFlavors);
+//is31Flavors(originalFlavors);
 
 function is31Flavors(array /*code here*/) {
   if (array.length == 31) {
@@ -63,7 +63,7 @@ Your function should add the flavor to the front of the array and console.log th
 
 For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */
 
-addFlavor("Rainbow Sherbert", originalFlavors);
+//addFlavor("Rainbow Sherbert", originalFlavors);
 
 function addFlavor(flavor, array) {
   array.unshift(flavor);
@@ -80,7 +80,7 @@ Your function should remove a flavor from the end of the array and console.log t
 
 For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/
 
-removeLastFlavor(originalFlavors);
+//removeLastFlavor(originalFlavors);
 
 function removeLastFlavor(array) {
   array.pop();
@@ -96,7 +96,7 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-getFlavorByIndex(originalFlavors, 2);
+//getFlavorByIndex(originalFlavors, 2);
 
 function getFlavorByIndex(array, index) {
   console.log(array[index]);
@@ -123,7 +123,7 @@ function removeFlavorByName(array, string) {
   return array;
 }
 
-console.log(removeFlavorByName(originalFlavors, "Vanilla"));
+//console.log(removeFlavorByName(originalFlavors, "Vanilla"));
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
 
@@ -133,12 +133,12 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-function copy(oldArray) {
-  let copiedFlavors = [];
-  for (i = 0; i < oldArray.length; i++) {
-    copiedFlavors[i] = oldArray[i];
+function copy(oldArray, newArray) {
+  var newArray = [];
+  for (let i = 0; i > 1; i++) {
+    newArray.push(oldArray);
   }
-  return copiedFlavors;
+  return newArray;
 }
 
 //console.log(copy(originalFlavors));
@@ -168,14 +168,15 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 hint - you can use the .includes method to help you solve this */
 
 function filterByWord(array, string) {
-  // array.includes("string");
+  let filteredArray = [];
 
-  let filterdFlavors = array.indexOf("string");
-  {
-    for (i = 0; i < array.length; i++) {}
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(string)) {
+      filteredArray.push(array[i]);
+    }
   }
 
-  return filterdFlavors;
+  return filteredArray;
 }
 
 console.log(filterByWord(originalFlavors, "Chocolate"));
@@ -283,6 +284,6 @@ var regionalFlavors = [
   "Caramel 'n' Cookies",
 ];
 
-function getRandomFlavors(/*code here*/) {
+function getRandomFlavors() {
   /*code here*/
 }
