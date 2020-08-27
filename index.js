@@ -42,8 +42,6 @@ To save you from having to count the items above, you can assume that length of 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
-//is31Flavors(originalFlavors);
-
 function is31Flavors(array /*code here*/) {
   if (array.length == 31) {
     console.log("true");
@@ -51,6 +49,8 @@ function is31Flavors(array /*code here*/) {
     console.log("false");
   }
 }
+
+//is31Flavors(originalFlavors);
 
 /* Task 2: Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
@@ -63,12 +63,12 @@ Your function should add the flavor to the front of the array and console.log th
 
 For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */
 
-//addFlavor("Rainbow Sherbert", originalFlavors);
-
 function addFlavor(flavor, array) {
   array.unshift(flavor);
   console.log(array);
 }
+
+//addFlavor("Rainbow Sherbert", originalFlavors);
 
 /* Task 3: Houston, we have a problem! There are now 32 flavors in the array! Your task is to remove an item from the end of the array. 
 
@@ -80,12 +80,12 @@ Your function should remove a flavor from the end of the array and console.log t
 
 For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/
 
-//removeLastFlavor(originalFlavors);
-
 function removeLastFlavor(array) {
   array.pop();
-  console.log(array);
+  return array;
 }
+
+//console.log(removeLastFlavor(originalFlavors));
 
 /* Task 4: Write a function that returns a flavor at a given index in the array.
 
@@ -96,11 +96,11 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-//getFlavorByIndex(originalFlavors, 2);
-
 function getFlavorByIndex(array, index) {
   console.log(array[index]);
 }
+
+//getFlavorByIndex(originalFlavors, 2);
 
 /* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
 
@@ -133,16 +133,18 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
+//for loop challenge
 function copy(oldArray, newArray) {
   var newArray = [];
   for (let i = 0; i > 1; i++) {
-    newArray.push(oldArray);
+    newArray[i].push(oldArray);
   }
   return newArray;
 }
 
 //console.log(copy(originalFlavors));
 
+//answer
 let copiedFlavors = [];
 
 function copy(oldArray, newArray) {
@@ -179,7 +181,7 @@ function filterByWord(array, string) {
   return filteredArray;
 }
 
-console.log(filterByWord(originalFlavors, "Chocolate"));
+//console.log(filterByWord(originalFlavors, "Chocolate"));
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/
 
